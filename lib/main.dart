@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:clima_weather_flutter/screens/loading_screen.dart';
 
 void main() {
