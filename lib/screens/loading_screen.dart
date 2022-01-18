@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:clima_weather_flutter/services/location.dart';
-import 'package:clima_weather_flutter/services/networking.dart';
 import 'package:clima_weather_flutter/screens/location_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-const String apiKey = '1d931b610ea125c7e78c075d7bfbe4a5';
-const String weatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
+import 'package:clima_weather_flutter/services/weather.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -20,23 +16,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   Future<void> getLocationData() async {
-    // Instantiate Location object
-    Location location = Location();
+    // Instantiate WeatherModel Object and call getLocationWeather
+    var weatherData = await WeatherModel().getLocationWeather();
 
-    // Gather lat / long via getCurrentLocation()
-    await location.getCurrentLocation();
-
-    // Generate a Uri for API call
-    var url = Uri.parse(
-        '$weatherMapURL?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=imperial');
-
-    // Instantiate NetworkHelper object with Uri
-    NetworkHelper networkHelper = NetworkHelper(url);
-
-    // Gather jsonDecoded weatherData
-    var weatherData = await networkHelper.getData();
-
-    // Build Location Screen, pass weatherData to its constructor.
+    // Build Location Screen, pass weatherData to its (named) constructor.
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return LocationScreen(
         locationWeather: weatherData,
