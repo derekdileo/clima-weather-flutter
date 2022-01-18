@@ -1,3 +1,4 @@
+import 'package:clima_weather_flutter/screens/city_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:clima_weather_flutter/services/weather.dart';
 import 'package:clima_weather_flutter/utilities/constants.dart';
@@ -74,7 +75,22 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      var typedName = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CityScreen();
+                          },
+                        ),
+                      );
+                      if (typedName != null) {
+                        print(typedName);
+                        var weatherData =
+                            await weatherModel.getCityWeather(typedName);
+                        updateUI(weatherData);
+                      }
+                    },
                     icon: Icon(
                       Icons.location_city,
                       size: 50.0,
