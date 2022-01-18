@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class Location {
@@ -18,8 +17,3 @@ class Location {
     }
   }
 }
-
-// double temperature = decodedData['main']['temp'];
-// int condition = decodedData['weather'][0]['id'];
-// String cityName = decodedData['name'];
-// String weatherDescription = decodedData['weather'][0]['description'];
