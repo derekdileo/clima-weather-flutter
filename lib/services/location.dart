@@ -5,8 +5,6 @@ class Location {
   double latitude = 0.0;
   double longitude = 0.0;
 
-  // Location(this.latitude, this.longitude);
-
   Future<void> getCurrentLocation() async {
     try {
       // Request Permission for Position and Get.
@@ -20,3 +18,8 @@ class Location {
     }
   }
 }
+
+// double temperature = decodedData['main']['temp'];
+// int condition = decodedData['weather'][0]['id'];
+// String cityName = decodedData['name'];
+// String weatherDescription = decodedData['weather'][0]['description'];
