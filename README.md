@@ -1,16 +1,16 @@
-# clima_weather_flutter
+# Clima Weather App ☁
 
 A Flutter project which will function as a mobile weather application.
 
-## Getting Started
+## Goal
+The objective of building this app is to learn about asynchronous programming in Dart. The app uses time-consuming tasks such as getting device location and networking to get data from the internet.
 
-This project is a starting point for a Flutter application.
+## What is will created
+A weather app inspired by the beautiful designs made by Olia Gozha which finds live weather data in the current location of the device as well as the weather for any city you can think of!
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![Alt Text](https://github.com/londonappbrewery/Images/raw/master/clima-demo.gif)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+To view contact me or see more projects, please visit my website!
+[Website](https://derekdileo.github.io/)
