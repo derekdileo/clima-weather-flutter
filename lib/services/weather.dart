@@ -2,7 +2,8 @@ import 'package:clima_weather_flutter/services/location.dart';
 import 'package:clima_weather_flutter/services/networking.dart';
 
 const String apiKey = '1d931b610ea125c7e78c075d7bfbe4a5';
-const String weatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
+const String openWeatherMapURL =
+    'https://api.openweathermap.org/data/2.5/weather';
 
 class WeatherModel {
   Future<dynamic> getLocationWeather() async {
@@ -14,7 +15,7 @@ class WeatherModel {
 
     // Generate a Uri for API call
     var url = Uri.parse(
-        '$weatherMapURL?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=imperial');
+        '$openWeatherMapURL?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=imperial');
 
     // Instantiate NetworkHelper object with Uri
     NetworkHelper networkHelper = NetworkHelper(url);
@@ -22,6 +23,15 @@ class WeatherModel {
     // Gather jsonDecoded weatherData
     var weatherData = await networkHelper.getData();
 
+    return weatherData;
+  }
+
+  Future<dynamic> getCityWeather(String cityName) async {
+    // Generate a Uri for API call
+    var url = Uri.parse(
+        '$openWeatherMapURL?q=$cityName&appid=$apiKey&units=imperial');
+
+    var weatherData = await NetworkHelper(url).getData();
     return weatherData;
   }
 
