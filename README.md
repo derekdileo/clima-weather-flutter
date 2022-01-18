@@ -1,6 +1,6 @@
 # Clima Weather App ☁
 
-A Flutter project which will function as a mobile weather application.
+A mobile weather application written in Dart.
 
 ## Goal
 The objective of building this app is to learn about asynchronous programming in Dart. The app uses time-consuming tasks such as getting device location and networking to get data from the internet.
